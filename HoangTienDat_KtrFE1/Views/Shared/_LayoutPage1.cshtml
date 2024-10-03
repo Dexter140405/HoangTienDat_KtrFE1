@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+    }
+
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+
+        header img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+    .separator {
+        margin: 0 10px;
+        font-size: 24px;
+        color: deepskyblue;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .contact {
+        text-align: right;
+        font-size: 14px;
+        color: #333;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+        font-size: 14px;
+        color: #333;
+    }
+
+        .contact p {
+            margin: 5px 0;
+        }
+
+        .contact i {
+            margin-right: 8px;
+            color: #0073e6;
+        }
+
+    h1 {
+        font-size: 24px;
+        color: #007aff;
+    }
+
+    .checkout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .delivery-section, .payment-method, .order-total {
+        background-color: #fff;
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .delivery-option, .payment-option {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+        .delivery-option input, .payment-option input {
+            margin-right: 10px;
+        }
+
+    label {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .delivery-option span {
+        color: #007aff;
+        font-weight: bold;
+    }
+
+    .product {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .delivery-date p {
+        font-size: 14px;
+        color: #777;
+    }
+
+    .summary-details p {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .summary-details span {
+        font-weight: bold;
+        color: #007aff;
+    }
+
+    hr {
+        border: 1px solid #ddd;
+        margin: 10px 0;
+    }
+
+    .freeship {
+        color: #28a745;
+        font-size: 14px;
+    }
+
+    .order-button {
+        background-color: #007aff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+        .order-button:hover {
+            background-color: #005bb5;
+        }
+
+    button {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="~/Views/Home/Myjs/JavaScript.js" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <img src="~/Content/img/LogoTiki.png" alt="Tiki Logo">
+            </div>
+            <div class="separator">|</div>
+            <h1>Thanh toán</h1>
+            <div class="contact">
+                <p><i class="fas fa-phone"></i> 1900-6035</p>
+                <p><i class="fas fa-clock"></i> 8h - 21h, cả T7 & CN</p>
+            </div>
+        </header>
+        <div class="checkout">
+            <div class="delivery-section">
+                <h2>Chọn hình thức giao hàng</h2>
+                <div class="delivery-option">
+                    <input type="radio" id="economy" name="delivery" checked>
+                    <label for="economy">Giao tiết kiệm <span>-30k</span></label>
+                </div>
+            </div>
+            <div class="order-summary">
+                <div class="product">
+                    <p>Điện thoại Samsung Galaxy A54 5G (8GB/128GB) - Hàng chính hãng</p>
+                    <span>Số lượng: 1</span>
+                </div>
+                <div class="delivery-date">
+                    <p><i class="fas fa-shipping-fast"></i> Giao trước 19h, Thứ 5, 26/10</p>
+                    <p><i class="fas fa-store"></i>Được giao bởi GIA DỤNG VIỆT</p>
+                </div>
+            </div>
+            <div class="payment-method">
+                <h2>Chọn hình thức thanh toán</h2>
+                <div class="payment-option">
+                    <input type="radio" id="cash" name="payment">
+                    <label for="cash"><i class="fas fa-money-bill-wave"></i>Thanh toán tiền mặt khi nhận hàng</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="viettel" name="payment">
+                    <label for="viettel"><i class="fas fa-mobile-alt"></i> Thanh toán bằng Viettel Money</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="momo" name="payment">
+                    <label for="momo"><i class="fas fa-mobile"></i>Thanh toán bằng MoMo</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="zalopay" name="payment">
+                    <label for="zalopay"><i class="fas fa-wallet"></i>Thanh toán bằng ZaloPay</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="vnpay" name="payment">
+                    <label for="vnpay"><i class="fas fa-qrcode"></i>Thanh toán bằng VNPAY</label>
+                </div>
+                <div class="payment-option">
+                    <input type="radio" id="visa" name="payment">
+                    <label for="visa"><i class="fas fa-credit-card"></i>Thanh toán bằng thẻ quốc tế (Visa, Master, JCB)</label>
+                </div>
+                <button><i class="fas fa-plus"></i> Thêm thẻ mới</button>
+            </div>
+
+
+            <div class="order-total">
+                <h2><i class="fas fa-file-invoice-dollar"></i>Đơn hàng</h2>
+                <div class="summary-details">
+                    <p>Tạm tính: <span>8.480.000đ</span></p>
+                    <p>Phí vận chuyển: <span>42.000đ</span></p>
+                    <p>Khuyến mãi vận chuyển: <span>-30.000đ</span></p>
+                    <div>
+                        <button onclick="updateShippingFee(35000)">Thay đổi phí vận chuyển thành 35,000đ</button>
+                        <button onclick="updateShippingPromotion(25000)">Áp dụng khuyến mãi 25,000đ</button>
+                    </div>
+                    <hr>
+                    <p>Tổng tiền: <span id="totalAmount">8.492.000đ</span></p>
+                    <p class="freeship"><i class="fas fa-shipping-fast"></i>FREESHIP đã được áp dụng!</p>
+                </div>
+                <button class="order-button"><i class="fas fa-check"></i>Đặt hàng</button>
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
